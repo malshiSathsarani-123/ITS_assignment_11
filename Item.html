@@ -79,61 +79,62 @@
         </div>
     </div>
 <script src="assets/lib/jquery.min.js"></script>
-<script>
+<script type="module" src="controller/ItemController.js"></script>
+<!--<script>-->
 
-    $('#submit').on('click',()=>{
-        let item_code = $('#item_code').val();
-        let description = $('#description').val();
-        let price  = $('#price').val();
-        let item_qty = $('#item_qty').val();
+<!--    $('#submit').on('click',()=>{-->
+<!--        let item_code = $('#item_code').val();-->
+<!--        let description = $('#description').val();-->
+<!--        let price  = $('#price').val();-->
+<!--        let item_qty = $('#item_qty').val();-->
 
-        let recode = `<td class = "item_code">${item_code}</td><td class="description">${description}</td><td class="price">${price}</td><td class="item_qty">${item_qty}</td>`
+<!--        let recode = `<td class = "item_code">${item_code}</td><td class="description">${description}</td><td class="price">${price}</td><td class="item_qty">${item_qty}</td>`-->
 
-        let newRow = $('<tr>');
-        newRow.append('<td>' + item_code + '</td>');
-        newRow.append('<td>' + description + '</td>');
-        newRow.append('<td>' + price + '</td>');
-        newRow.append('<td>' + item_qty + '</td>');
+<!--        let newRow = $('<tr>');-->
+<!--        newRow.append('<td>' + item_code + '</td>');-->
+<!--        newRow.append('<td>' + description + '</td>');-->
+<!--        newRow.append('<td>' + price + '</td>');-->
+<!--        newRow.append('<td>' + item_qty + '</td>');-->
 
-        $('#item_table-body').append(newRow);
+<!--        $('#item_table-body').append(newRow);-->
 
-        $("#reset").click();
-    });
+<!--        $("#reset").click();-->
+<!--    });-->
 
-    $('#update').on('click',()=>{
-        let item_code = $('#item_code').val();
-        let description = $('#description').val();
-        let price  = $('#price').val();
-        let item_qty = $('#item_qty').val();
+<!--    $('#update').on('click',()=>{-->
+<!--        let item_code = $('#item_code').val();-->
+<!--        let description = $('#description').val();-->
+<!--        let price  = $('#price').val();-->
+<!--        let item_qty = $('#item_qty').val();-->
 
-        let recode = `<td class = "item_code">${item_code}</td><td class="description">${description}</td><td class="price">${price}</td><td class="item_qty">${item_qty}</td>`
+<!--        let recode = `<td class = "item_code">${item_code}</td><td class="description">${description}</td><td class="price">${price}</td><td class="item_qty">${item_qty}</td>`-->
 
-        $("tbody>tr").eq(row_index).html(recode);
+<!--        $("tbody>tr").eq(row_index).html(recode);-->
 
-        $("#reset").click();
-    });
+<!--        $("#reset").click();-->
+<!--    });-->
 
-    $('#delete').on('click',()=>{
-        $("tbody>tr").eq(row_index).remove();
+<!--    $('#delete').on('click',()=>{-->
+<!--        $("tbody>tr").eq(row_index).remove();-->
 
-        $("#reset").click();
-    });
+<!--        $("#reset").click();-->
+<!--    });-->
 
-    $("tbody").on("click", "tr", function () {
+<!--    $("tbody").on("click", "tr", function () {-->
 
-        row_index = $(this).index();
+<!--        row_index = $(this).index();-->
 
-        let item_code = $(this).find("td:eq(0)").text();
-        let description = $(this).find("td:eq(1)").text();
-        let price = $(this).find("td:eq(2)").text();
-        let item_qty = $(this).find("td:eq(3)").text();
+<!--        let item_code = $(this).find("td:eq(0)").text();-->
+<!--        let description = $(this).find("td:eq(1)").text();-->
+<!--        let price = $(this).find("td:eq(2)").text();-->
+<!--        let item_qty = $(this).find("td:eq(3)").text();-->
 
-        $('#item_code').val(item_code);
-        $('#description').val(description);
-        $('#price').val(price);
-        $('#item_qty').val(item_qty);
-    });
+<!--        $('#item_code').val(item_code);-->
+<!--        $('#description').val(description);-->
+<!--        $('#price').val(price);-->
+<!--        $('#item_qty').val(item_qty);-->
+<!--    });-->
 
-</script>
+<!--</script>-->
 </body>
 </html>

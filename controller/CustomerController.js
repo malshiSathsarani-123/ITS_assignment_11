@@ -51,7 +51,7 @@ $('#update').on('click',()=>{
 })
 
 // delete
-$("#student-btns>button[type='button']").eq(2).on("click", () => {
+$('#delete').on('click',()=>{
     let customer_id = $('#customer_id').val();
 
     let index = customer_db.findIndex(item => item.customer_id === customer_id);
