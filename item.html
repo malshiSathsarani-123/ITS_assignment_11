@@ -5,17 +5,18 @@
     <title>Item</title>
     <meta name="keywords" content="HTML,CSS,Java Script, Pos System,malshi">
     <meta name="description" content="Pos System details and my Pos System website.">
-    <meta name="revised" content="Login page, 01/08/2023">
+    <meta name="revised" content="01/08/2023">
     <meta name="author" content="Malshi Sathsarani">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="assets/styles/normalize.css">
-    <link rel="stylesheet" href="assets/styles/stylesForItem.css">
     <link rel="stylesheet" href="assets/lib/fontawesome/css/all.min.css">
-    <script src="assets/lib/fontawesome/js/all.min.js"></script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/lib/normalize.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/stylesForItem.css">
 </head>
 <body>
+
+
 <div class="dashboard-nav">
     <header>
         <a href="#" class="brand-logo"><span>POS SYSTEM</span></a>
@@ -26,10 +27,11 @@
         <a href="Item.html" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Item </a>
         <a href="order.html" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Order </a>
         <div class="nav-item-divider"></div>
-        <a href="index.html" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
+        <a href="customer.html" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
     </nav>
 </div>
-    <div class="container">
+
+<div id="item-section" class="container">
         <div class="row">
             <div class="col">
                 <h1 class="title">Item Details</h1>
@@ -54,7 +56,7 @@
                         <input id="item_qty" class="form-control-input" type="number" required>
                         <label class="form-label" for="item_qty">Qty</label>
                     </div>
-                    <div class="mt-4 mb-5">
+                    <div class="mt-4 mb-5" id="item-batons">
                         <button id="submit" type="button" class="btn btn-success">Save</button>
                         <button id="update" type="button" class="btn btn-primary">Update</button>
                         <button id="delete" type="button" class="btn btn-danger">Delete</button>
@@ -79,62 +81,11 @@
         </div>
     </div>
 <script src="assets/lib/jquery.min.js"></script>
+<script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/lib/fontawesome/js/all.min.js"></script>
+
+
 <script type="module" src="controller/ItemController.js"></script>
-<!--<script>-->
 
-<!--    $('#submit').on('click',()=>{-->
-<!--        let item_code = $('#item_code').val();-->
-<!--        let description = $('#description').val();-->
-<!--        let price  = $('#price').val();-->
-<!--        let item_qty = $('#item_qty').val();-->
-
-<!--        let recode = `<td class = "item_code">${item_code}</td><td class="description">${description}</td><td class="price">${price}</td><td class="item_qty">${item_qty}</td>`-->
-
-<!--        let newRow = $('<tr>');-->
-<!--        newRow.append('<td>' + item_code + '</td>');-->
-<!--        newRow.append('<td>' + description + '</td>');-->
-<!--        newRow.append('<td>' + price + '</td>');-->
-<!--        newRow.append('<td>' + item_qty + '</td>');-->
-
-<!--        $('#item_table-body').append(newRow);-->
-
-<!--        $("#reset").click();-->
-<!--    });-->
-
-<!--    $('#update').on('click',()=>{-->
-<!--        let item_code = $('#item_code').val();-->
-<!--        let description = $('#description').val();-->
-<!--        let price  = $('#price').val();-->
-<!--        let item_qty = $('#item_qty').val();-->
-
-<!--        let recode = `<td class = "item_code">${item_code}</td><td class="description">${description}</td><td class="price">${price}</td><td class="item_qty">${item_qty}</td>`-->
-
-<!--        $("tbody>tr").eq(row_index).html(recode);-->
-
-<!--        $("#reset").click();-->
-<!--    });-->
-
-<!--    $('#delete').on('click',()=>{-->
-<!--        $("tbody>tr").eq(row_index).remove();-->
-
-<!--        $("#reset").click();-->
-<!--    });-->
-
-<!--    $("tbody").on("click", "tr", function () {-->
-
-<!--        row_index = $(this).index();-->
-
-<!--        let item_code = $(this).find("td:eq(0)").text();-->
-<!--        let description = $(this).find("td:eq(1)").text();-->
-<!--        let price = $(this).find("td:eq(2)").text();-->
-<!--        let item_qty = $(this).find("td:eq(3)").text();-->
-
-<!--        $('#item_code').val(item_code);-->
-<!--        $('#description').val(description);-->
-<!--        $('#price').val(price);-->
-<!--        $('#item_qty').val(item_qty);-->
-<!--    });-->
-
-<!--</script>-->
 </body>
 </html>
