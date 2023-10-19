@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Customer</title>
+    <title>Order</title>
     <meta name="keywords" content="HTML,CSS,Java Script, Pos System,malshi">
     <meta name="description" content="Pos System details and my Pos System website.">
     <meta name="revised" content="Login page, 01/08/2023">
     <meta name="author" content="Malshi Sathsarani">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="assets/styles/normalize.css">
-    <link rel="stylesheet" href="assets/styles/stylesForCustomer.css">
     <link rel="stylesheet" href="assets/lib/fontawesome/css/all.min.css">
-    <script src="assets/lib/fontawesome/js/all.min.js"></script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/lib/normalize.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/stylesForCustomer.css">
 </head>
 <body>
+
+
 <div class="dashboard-nav">
     <header>
         <a href="#" class="brand-logo"><span>POS SYSTEM</span></a>
@@ -26,132 +27,72 @@
         <a href="Item.html" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Item </a>
         <a href="order.html" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Order </a>
         <div class="nav-item-divider"></div>
-        <a href="index.html" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
+        <a href="customer.html" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
     </nav>
 </div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1 class="title">Customers Details</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" id="data">
-                <form>
-                    <div class="mb-3">
-                        <input class="form-control-input" id="customer_id" type="text" required>
-                        <label for="customer_id" class="form-label">Customer_Id</label>
-                    </div>
-                    <div class="mb-3">
-                        <input id="name" class="form-control-input" type="text" required>
-                        <label class="form-label" for="name">Name</label>
-                    </div>
-                    <div class="mb-3">
-                        <input id="address" class="form-control-input" type="text" required>
-                        <label class="form-label" for="address">Address</label>
-                    </div>
-                    <div class="mb-3">
-                        <input id="email" class="form-control-input" type="email" required>
-                        <label class="form-label" for="email">E-mail</label>
-                    </div>
-                    <div class="mb-3">
-                        <input id="phone" class="form-control-input" type="text" required>
-                        <label class="form-label" for="phone">Contact Number</label>
-                    </div>
-                    <div class="mt-4 mb-5">
-                        <button id="submit" type="button" class="btn btn-success">Save</button>
-                        <button id="update" type="button" class="btn btn-primary">Update</button>
-                        <button id="delete" type="button" class="btn btn-danger">Delete</button>
-                        <button id="reset" type="reset" class="btn btn-warning">Clear</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12" id="tabel">
-                <table class="table mt-5" border="5px">
-                    <thead>
-                    <tr>
-                        <th scope="col">Customer_Id</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Contact</th>
-                    </tr>
-                    </thead>
-                    <tbody id="table-body">
-                    </tbody>
-                </table>
-            </div>
+
+<!--Student Section-->
+<div id="customer-section" class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="title">Customers Details</h1>
         </div>
     </div>
+    <div class="row">
+        <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" id="data">
+            <form>
+                <div class="mb-3">
+                    <input class="form-control-input" id="customer_id" type="text" required>
+                    <label for="customer_id" class="form-label">Customer_Id</label>
+                </div>
+                <div class="mb-3">
+                    <input id="name" class="form-control-input" type="text" required>
+                    <label class="form-label" for="name">Name</label>
+                </div>
+                <div class="mb-3">
+                    <input id="address" class="form-control-input" type="text" required>
+                    <label class="form-label" for="address">Address</label>
+                </div>
+                <div class="mb-3">
+                    <input id="email" class="form-control-input" type="email" required>
+                    <label class="form-label" for="email">E-mail</label>
+                </div>
+                <div class="mb-3">
+                    <input id="phone" class="form-control-input" type="text" required>
+                    <label class="form-label" for="phone">Contact Number</label>
+                </div>
+                <div class="mt-4 mb-5" id="customer-batons">
+                    <button id="submit" type="button" class="btn btn-success">Save</button>
+                    <button id="update" type="button" class="btn btn-primary">Update</button>
+                    <button id="delete" type="button" class="btn btn-danger">Delete</button>
+                    <button id="reset" type="reset" class="btn btn-warning">Clear</button>
+                </div>
+            </form>
+        </div>
+        <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12" id="table">
+            <table class="table mt-5" border="5px">
+                <thead>
+                <tr>
+                    <th scope="col">Customer_Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Contact</th>
+                </tr>
+                </thead>
+                <tbody id="customer-table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 <script src="assets/lib/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/lib/fontawesome/js/all.min.js"></script>
+
 
 <script type="module" src="controller/CustomerController.js"></script>
 
-<!--<script>-->
-<!--    $('#submit').on('click',()=> {-->
-
-<!--        console.log("hi")-->
-<!--    });-->
-<!--    // $('#submit').on('click',()=>{-->
-<!--    //     let customer_id = $('#customer_id').val();-->
-<!--    //     let name = $('#name').val();-->
-<!--    //     let address  = $('#address').val();-->
-<!--    //     let email = $('#email').val();-->
-<!--    //     let contact = $('#phone').val();-->
-<!--    //-->
-<!--    //     let recode = `<td class = "id">${customer_id}</td><td class="name">${name}</td><td class="address">${address}</td><td class="email">${email}</td><td class="phone">${contact}</td>`-->
-<!--    //-->
-<!--    //     let newRow = $('<tr>');-->
-<!--    //     newRow.append('<td>' + customer_id + '</td>');-->
-<!--    //     newRow.append('<td>' + name + '</td>');-->
-<!--    //     newRow.append('<td>' + address + '</td>');-->
-<!--    //     newRow.append('<td>' + email + '</td>');-->
-<!--    //     newRow.append('<td>' + contact + '</td>');-->
-<!--    //-->
-<!--    //     $('#table-body').append(newRow);-->
-<!--    //-->
-<!--    //     $("#reset").click();-->
-<!--    // });-->
-<!--    //-->
-<!--    // $('#update').on('click',()=>{-->
-<!--    //     let customer_id = $('#customer_id').val();-->
-<!--    //     let name = $('#name').val();-->
-<!--    //     let address  = $('#address').val();-->
-<!--    //     let email = $('#email').val();-->
-<!--    //     let contact = $('#phone').val();-->
-<!--    //-->
-<!--    //     let recode = `<td class = "id">${customer_id}</td><td class="name">${name}</td><td class="address">${address}</td><td class="email">${email}</td><td class="phone">${contact}</td>`-->
-<!--    //-->
-<!--    //     $("tbody>tr").eq(row_index).html(recode);-->
-<!--    //-->
-<!--    //     $("#reset").click();-->
-<!--    // });-->
-<!--    //-->
-<!--    // $('#delete').on('click',()=>{-->
-<!--    //     $("tbody>tr").eq(row_index).remove();-->
-<!--    //-->
-<!--    //     $("#reset").click();-->
-<!--    // });-->
-
-<!--    // $("tbody").on("click", "tr", function () {-->
-<!--    //-->
-<!--    //     row_index = $(this).index();-->
-<!--    //-->
-<!--    //     let customer_id = $(this).find("td:eq(0)").text();-->
-<!--    //     let name = $(this).find("td:eq(1)").text();-->
-<!--    //     let address = $(this).find("td:eq(2)").text();-->
-<!--    //     let email = $(this).find("td:eq(3)").text();-->
-<!--    //     let contact = $(this).find("td:eq(4)").text();-->
-<!--    //-->
-<!--    //     $('#customer_id').val(customer_id);-->
-<!--    //     $('#name').val(name);-->
-<!--    //     $('#address').val(address);-->
-<!--    //     $('#email').val(email);-->
-<!--    //     $('#phone').val(contact);-->
-<!--    //-->
-<!--    // });-->
-
-<!--</script>-->
 </body>
 </html>

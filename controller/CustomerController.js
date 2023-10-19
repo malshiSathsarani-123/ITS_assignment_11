@@ -1,78 +1,83 @@
-import {CustomerModel} from "model/CustomerModel.js";
-import {customer_db} from "db/db.js";
+import {CustomerModel} from "../model/CustomerModel.js";
+import {customer_db} from "../db/db.js";
 
 var row_index = null;
 
 const loadCustomerData = () => {
-    $('#table-body').empty(); // make tbody empty
+    $('#customer-table-body').empty();
     customer_db.map((item, index) => {
-        let recode = `<tr><td class = "id">${item.customer_id}</td><td class="name">${item.name}</td><td class="address">${item.address}</td><td class="email">${item.email}</td><td class="phone">${item.phone}</td></tr>`
-
-        $("#table-body").append(recode);
+        let record = `<tr><td class="customer_id">${item.customer_id}</td><td class="name">${item.name}</td><td class="address">${item.address}</td><td class="email">${item.email}
+        </td><td class="phone">${item.phone}</td></tr>`;
+        $("#customer-table-body").append(record);
     });
 };
 
 // submit
-    $('#submit').on('click',()=>{
+$("#customer-batons>button[type='button']").eq(0).on("click", () => {
 
-        console.log("hello")
-        let customer_id = $('#customer_id').val();
-        let name = $('#name').val();
-        let address  = $('#address').val();
-        let email = $('#email').val();
-        let contact = $('#phone').val();
+    console.log("hello")
+    let customer_id = $("#customer_id").val();
+    let name = $("#name").val();
+    let address = $("#address").val();
+    let email = $("#email").val();
+    let phone = $("#phone").val();
 
-    let customer_obj = new CustomerModel(customer_id, name, address, email, contact);
+    let customer_obj = new CustomerModel(customer_id, name, address, email, phone);
 
     customer_db.push(customer_obj);
 
-        $("#reset").click();
+    $("#customer-batons>button[type='reset']").click();
 
-        loadCustomerData();
+    loadCustomerData();
 });
 
-// // update
-$('#update').on('click',()=>{
+// update
+$("#customer-batons>button[type='button']").eq(1).on("click", () => {
 
-    let customer_id = $('#customer_id').val();
-    let name = $('#name').val();
-    let address  = $('#address').val();
-    let email = $('#email').val();
-    let contact = $('#phone').val();
+    let customer_id = $("#customer_id").val();
+    let name = $("#name").val();
+    let address = $("#address").val();
+    let email = $("#email").val();
+    let phone = $("#phone").val();
 
-    let customer_obj = new CustomerModel(customer_id, name, address, email, contact);
+    let customer_obj = new CustomerModel(customer_id, name, address, email, phone);
 
     let index = customer_db.findIndex(item => item.customer_id === customer_id);
-    customer_db.push(customer_obj);
 
-    $("#reset").click();
+    customer_db[index] = customer_obj;
+
+    $("#customer-batons>button[type='reset']").click();
 
     loadCustomerData();
 })
 
 // delete
-$('#delete').on('click',()=>{
-    let customer_id = $('#customer_id').val();
+$("#customer-batons>button[type='button']").eq(2).on("click", () => {
+    let customer_id = $("#customer_id").val();
 
     let index = customer_db.findIndex(item => item.customer_id === customer_id);
-    customer_db.splice(index, 1);
-    $("#reset").click();
 
-    loadCustomerData()
+    customer_db.splice(index, 1);
+
+    $("#customer-batons>button[type='reset']").click();
+
+    loadCustomerData();
 })
 
-$("#table-body").on("click", "tr", function() {
+$("#customer-table-body").on("click", "tr", function() {
     row_index = $(this).index();
 
-    let customer_id = $(this).find("td:eq(0)").text();
-    let name = $(this).find("td:eq(1)").text();
-    let address = $(this).find("td:eq(2)").text();
-    let email = $(this).find("td:eq(3)").text();
-    let contact = $(this).find("td:eq(4)").text();
+    console.log(row_index);
 
-    $('#customer_id').val(customer_id);
-    $('#name').val(name);
-    $('#address').val(address);
-    $('#email').val(email);
-    $('#phone').val(contact);
+    let customer_id = $(this).find(".customer_id").text();
+    let name = $(this).find(".name").text();
+    let address = $(this).find(".address").text();
+    let email = $(this).find(".email").text();
+    let phone = $(this).find(".phone").text();
+
+    $("#customer_id").val(customer_id);
+    $("#name").val(name);
+    $("#address").val(address);
+    $("#email").val(email);
+    $("#phone").val(phone);
 });
