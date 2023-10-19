@@ -5,17 +5,18 @@
     <title>Order</title>
     <meta name="keywords" content="HTML,CSS,Java Script, Pos System,malshi">
     <meta name="description" content="Pos System details and my Pos System website.">
-    <meta name="revised" content="Login page, 01/08/2023">
+    <meta name="revised" content="01/08/2023">
     <meta name="author" content="Malshi Sathsarani">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="assets/styles/normalize.css">
-    <link rel="stylesheet" href="assets/styles/stylesForOrder.css">
     <link rel="stylesheet" href="assets/lib/fontawesome/css/all.min.css">
-    <script src="assets/lib/fontawesome/js/all.min.js"></script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/lib/normalize.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/stylesForOrder.css">
 </head>
 <body>
+
+
 <div class="dashboard-nav">
     <header>
         <a href="#" class="brand-logo"><span>POS SYSTEM</span></a>
@@ -23,16 +24,17 @@
     <nav class="dashboard-nav-list">
         <a href="dashboard.html" class="dashboard-nav-item"><i class="fas fa-home"></i>Home </a>
         <a href="customer.html" class="dashboard-nav-item"><i class="fas fa-user"></i> Customer </a>
-        <a href="Item.html" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Item </a>
+        <a href="item.html" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Item </a>
         <a href="order.html" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Order </a>
         <div class="nav-item-divider"></div>
-        <a href="index.html" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
+        <a href="customer.html" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
     </nav>
 </div>
-<div class="container">
-    <div class="col">
-        <h1 class="title">Place Order</h1>
-    </div>
+
+<div id="order-section" class="container">
+        <div class="col">
+            <h1 class="title">Place Order</h1>
+        </div>
         <div class="row">
             <div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12" id="data">
                 <u class="topic"><h3 >Invoice Data</h3></u>
@@ -46,7 +48,6 @@
                         <label for="date" class="form-label">Order Date</label>
                     </div>
                     <div class="mb-3">
-<!--                        <select class="form-control-input" id="selectCusID"></select>-->
                         <input class="form-control-input" id="selectCusID" type="text" required>
                         <label for="selectCusID" class="form-label">Customer Id</label>
                     </div>
@@ -91,7 +92,7 @@
                         <input id="orderQty" class="form-control-input" type="number" required>
                         <label class="form-label" for="orderQty">Order Qty</label>
                     </div>
-                    <div class="mt-4 mb-5">
+                    <div class="mt-4 mb-5" id="add-button">
                         <button id="add_item" type="button" class="btn btn-primary">Add Item</button>
                     </div>
                 </form>
@@ -115,43 +116,31 @@
                     </div>
                 </form>
             </div>
-<!--        <div class="col col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">-->
-        <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="height:180px; overflow-y: scroll">
-            <table class="table table-bordered text-white">
-                <thead class="bg-primary">
-                <tr>
-                    <th>Item Code</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody class="bg-light text-dark" id="orderTable">
-                </tbody>
-            </table>
-        </div>
+            <!--        <div class="col col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">-->
+            <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="height:180px; overflow-y: scroll">
+                <table class="table table-bordered text-white">
+                    <thead class="bg-primary">
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody class="bg-light text-dark" id="order-table-body">
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+
 <script src="assets/lib/jquery.min.js"></script>
-<script>
-    $('#add_item').on('click',()=>{
-        let itemCode = $('#itemCode').val();
-        let description = $('#description').val();
-        let price  = $('#price').val();
-        let orderQty = $('#orderQty').val();
-        let total = price*orderQty;
+<script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/lib/fontawesome/js/all.min.js"></script>
 
-        let newRow = $('<tr>');
-        newRow.append('<td>' + itemCode + '</td>');
-        newRow.append('<td>' + description + '</td>');
-        newRow.append('<td>' + price + '</td>');
-        newRow.append('<td>' + orderQty + '</td>');
-        newRow.append('<td>' + total + '</td>');
+<script type="module" src="controller/OrderController.js"></script>
 
-        $('#orderTable').append(newRow);
-    });
-</script>
 </body>
 </html>
