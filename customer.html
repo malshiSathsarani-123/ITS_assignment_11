@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="assets/lib/normalize.css">
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles/stylesForCustomer.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 </head>
 <body>
 
@@ -68,6 +70,7 @@
             </form>
         </div>
         <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12" id="table">
+            <input type="text" class="form-control mt-3" id="customer-search" placeholder="Search by First Name">
             <table class="table mt-5" border="5px">
                 <thead>
                 <tr>
@@ -90,6 +93,8 @@
 <script src="assets/lib/fontawesome/js/all.min.js"></script>
 
 <script type="module" src="controller/CustomerController.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </body>
 </html>
