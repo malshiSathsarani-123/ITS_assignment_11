@@ -8,7 +8,7 @@ body{
 .section{
     position: relative;
 }
-.row{
+#row{
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     width: 1000px;
     height: 500px;
@@ -17,26 +17,26 @@ body{
     left:15vw;
     margin: 0;
 }
-.row>div:first-child>h1{
+#row>div:first-child>h1{
     font-size: 40px;
     color: white;
     position: relative;
     top: 10vw;
 }
 
-.row>div:first-child>h3{
+#row>div:first-child>h3{
     font-size: 20px;
     color: white;
     position: relative;
     top: 12vw;
 }
-.row>div:first-child>a>img{
+#row>div:first-child>a>img{
     width: 30px;
     position: relative;
     top: 13vw;
 }
 
-.row>div:nth-child(2){
+#row>div:nth-child(2){
     position: relative;
     padding: 50px;
     top:100px;
@@ -47,7 +47,7 @@ body{
     height:350px;
 }
 
-.row>div:nth-child(2)>h1{
+#row>div:nth-child(2)>h1{
     position: relative;
     top: -10px;
     left: 0;
@@ -92,7 +92,7 @@ body{
     transition: -webkit-transform .2s ease-in-out;
     transition: transform .2s ease-in-out;
 }
-.btn{
+#btn{
     position: absolute;
     bottom: 50px;
     right: 50px;

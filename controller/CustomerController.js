@@ -67,8 +67,6 @@ $("#customer-batons>button[type='button']").eq(0).on("click", () => {
 // update
 $("#customer-batons>button[type='button']").eq(1).on("click", () => {
 
-    toastr.success('Are you the 6 fingered man?')
-
     let customer_id = $("#customer_id").val();
     let name = $("#name").val();
     let address = $("#address").val();
@@ -88,8 +86,6 @@ $("#customer-batons>button[type='button']").eq(1).on("click", () => {
 
 // delete
 $("#customer-batons>button[type='button']").eq(2).on("click", () => {
-
-    toastr.error('Are you the 6 fingered man?')
 
     let customer_id = $("#customer_id").val();
 

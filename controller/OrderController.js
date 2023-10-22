@@ -17,8 +17,8 @@ $("#add-button>button[type='button']").eq(0).on("click", () => {
 
     console.log("hello")
     let itemCode = $("#itemCode").val();
-    let description = $("#description").val();
-    let price = $("#price").val();
+    let description = $("#description-order").val();
+    let price = $("#price-order").val();
     let orderQty = $("#orderQty").val();
     let total = orderQty*price;
 

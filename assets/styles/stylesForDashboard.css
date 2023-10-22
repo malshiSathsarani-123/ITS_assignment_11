@@ -20,7 +20,7 @@ nav {
 }
 
 a {
-    color: #3f84fc;
+    /*color: #3f84fc;*/
     text-decoration: none;
     background-color: transparent;
 }
@@ -32,19 +32,16 @@ a:hover {
 
 
 .dashboard-nav {
-    /*min-width: 100px;*/
+    min-width: 100px;
     position: absolute;
-    /*position: fixed;*/
     left: 0;
     top: 0;
     bottom: 0;
     overflow: auto;
-    background-color: #373193;
+    /*background-color: #373193;*/
+    height: 100vh;
 }
 
-.dashboard-compact .dashboard-nav {
-    display: none;
-}
 
 .dashboard-nav header {
     /*min-height: 84px;*/
@@ -137,10 +134,6 @@ a:hover {
 }
 .dashboard-nav-item:hover {
     background: rgba(255, 255, 255, 0.04);
-}
-
-.active {
-    background: rgba(0, 0, 0, 0.1);
 }
 
 .nav-item-divider {
