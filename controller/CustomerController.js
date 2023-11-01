@@ -18,7 +18,6 @@ const loadCustomerData = () => {
 // submit
 $("#customer-batons>button[type='button']").eq(0).on("click", () => {
 
-    console.log("hello")
     let customer_id = $("#customer_id").val();
     let name = $("#name").val();
     let address = $("#address").val();
@@ -100,8 +99,6 @@ $("#customer-batons>button[type='button']").eq(2).on("click", () => {
 
 $("#customer-table-body").on("click", "tr", function() {
     row_index = $(this).index();
-
-    console.log(row_index);
 
     let customer_id = $(this).find(".customer_id").text();
     let name = $(this).find(".name").text();

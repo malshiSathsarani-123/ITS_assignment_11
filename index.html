@@ -206,24 +206,13 @@
                     <label for="date" class="form-label">Order Date</label>
                 </div>
                 <div class="mb-3">
-                    <input class="form-control-input" id="selectCusID" type="text" required>
+<!--                    <input class="form-control-input" id="selectCusID" type="checkbox" required>-->
+                    <select name="customer_id" id="selectCusID">Customer Id</select>
                     <label for="selectCusID" class="form-label">Customer Id</label>
                 </div>
                 <div class="mb-3">
                     <input id="name-order" class="form-control-input" type="text" required>
-                    <label class="form-label" for="name">Name</label>
-                </div>
-                <div class="mb-3">
-                    <input id="address-order" class="form-control-input" type="text" required>
-                    <label class="form-label" for="address">Address</label>
-                </div>
-                <div class="mb-3">
-                    <input id="email-order" class="form-control-input" type="email" required>
-                    <label class="form-label" for="email">E-mail</label>
-                </div>
-                <div class="mb-3">
-                    <input id="phone-order" class="form-control-input" type="text" required>
-                    <label class="form-label" for="phone">Contact Number</label>
+                    <label class="form-label" for="name-order">Name</label>
                 </div>
             </form>
         </div>
@@ -231,7 +220,9 @@
             <u class="topic"><h3 >Item Details</h3></u>
             <form>
                 <div class="mb-3">
-                    <input class="form-control-input" id="itemCode" type="text" required>
+<!--                    <input class="form-control-input" id="itemCode" type="text" required>-->
+                    <select name="item_code" id="itemCode">Item Code</select>
+                    <input class="form-control-input" id="item-Code" type="text" required>
                     <label for="itemCode" class="form-label">Item Code</label>
                 </div>
                 <div class="mb-3">
@@ -258,8 +249,8 @@
         <div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 data">
             <form>
                 <div class="mb-3">
-                    <span class="total" id="total-text">Total : </span>
-                    <span id="total">00.0</span> <span class="unit">Rs/=</span>
+                    <span id="total-text">Total : </span>
+                    <input id="total" class="form-control-input" type="number" required>
                 </div>
                 <div class="mb-3">
                     <input id="cash" class="form-control-input" type="number" required>
@@ -274,7 +265,6 @@
                 </div>
             </form>
         </div>
-        <!--        <div class="col col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">-->
         <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="height:180px; overflow-y: scroll">
             <table class="table table-bordered text-white">
                 <thead class="bg-primary">
@@ -304,6 +294,11 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script>
+    // console.log(customer_db.map((result)=>console.log(result.customer_id)))
+    // for (let i = 0; i < customer_db.length; i++) {
+
+
+
     $('#order-section').css('display', 'none');
     $('#item-section').css('display', 'none');
     $('#customer-section').css('display', 'none');
@@ -368,6 +363,8 @@
         $('#order-section').css('display', 'nav');
         $('.navbar').css('display', 'nav');
     });
+
+
 </script>
 </body>
 </html>
