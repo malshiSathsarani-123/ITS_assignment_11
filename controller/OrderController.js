@@ -15,13 +15,16 @@ const clear = () => {
 }
 
 const netTotal = (total) => {
-    let netTotal = $("#total").val();
-    console.log(netTotal)
-    let newTotal = (netTotal) * (total);
-    console.log(newTotal)
+    let netTotal = parseFloat($("#total").val());
+    let newTotal = (netTotal+total);
     $("#total").val(newTotal);
 
 }
+// const netTotal = (total) => {
+//     let netTotal = parseFloat($("#total").val());
+//     let newTotal = netTotal + total;
+//     $("#total").val(newTotal);
+// }
 
 const loadOrderData = () => {
     $('#order-table-body').empty();
@@ -94,6 +97,7 @@ $("#itemCode").on("change", function() {
     $("#qty-order").val(item_db[index].item_qty)
 
 });
+
 const loadItemData = () => {
     $('#item_table-body').empty();
     item_db.map((item, index) => {
@@ -101,3 +105,10 @@ const loadItemData = () => {
         $("#item_table-body").append(record);
     });
 };
+$("#place-order>button[type='button']").eq(0).on("click", () => {
+    clear();
+    $("#name-order").val("");
+    let netTotal = parseFloat($("#orderId").val());
+    let newTotal = (netTotal+1);
+    $("#orderId").val(newTotal);
+});

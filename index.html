@@ -252,15 +252,15 @@
                     <span id="total-text">Total : </span>
                     <input id="total" class="form-control-input" type="number" required>
                 </div>
-                <div class="mb-3">
-                    <input id="cash" class="form-control-input" type="number" required>
-                    <label class="form-label" for="cash">Cash</label>
-                </div>
-                <div class="mb-3">
-                    <input id="balance" class="form-control-input" type="number" required>
-                    <label class="form-label" for="balance">Balance</label>
-                </div>
-                <div class="mt-4 mb-5">
+<!--                <div class="mb-3">-->
+<!--                    <input id="cash" class="form-control-input" type="number" required>-->
+<!--                    <label class="form-label" for="cash">Cash</label>-->
+<!--                </div>-->
+<!--                <div class="mb-3">-->
+<!--                    <input id="balance" class="form-control-input" type="number" required>-->
+<!--                    <label class="form-label" for="balance">Balance</label>-->
+<!--                </div>-->
+                <div class="mt-4 mb-5" id="place-order">
                     <button type="button" class="btn btn-success">Place Order</button>
                 </div>
             </form>
@@ -296,9 +296,6 @@
 <script>
     // console.log(customer_db.map((result)=>console.log(result.customer_id)))
     // for (let i = 0; i < customer_db.length; i++) {
-
-
-
     $('#order-section').css('display', 'none');
     $('#item-section').css('display', 'none');
     $('#customer-section').css('display', 'none');
@@ -306,6 +303,8 @@
     $('.dashboard-nav').css('display', 'none');
 
     $('.dashboard-navigation').on('click', () => {
+        $("#total").val(0);
+        $("#orderId").val(1);
 
         let userName = $("#userName").val();
         let password = $("#password").val();
