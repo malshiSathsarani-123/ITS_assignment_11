@@ -111,4 +111,6 @@ $("#place-order>button[type='button']").eq(0).on("click", () => {
     let netTotal = parseFloat($("#orderId").val());
     let newTotal = (netTotal+1);
     $("#orderId").val(newTotal);
+    $("#total").val(newTotal);
+    $("#order-table-body").empty();
 });
